@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "./ui/button";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -16,10 +17,14 @@ export default function Hero() {
           productivity!
         </h2>
         <div className="flex flex-row gap-2 items-center justify-center">
-          <Button>Get Started</Button>
-          <Button variant="outline">
-            <GitHubLogoIcon className="mr-2 h-4 w-4" /> Github
-          </Button>
+          <Link href="/signup">
+            <Button>Get Started</Button>
+          </Link>
+          <Link href="https://github.com/rohanjhaldiyal/sticky" target="_blank">
+            <Button variant="outline">
+              <GitHubLogoIcon className="mr-2 h-4 w-4" /> Github
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

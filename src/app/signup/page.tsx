@@ -1,12 +1,13 @@
-import { Navbar } from "@/components/navbar";
-import  Hero from "@/components/hero";
-import { Footer } from "@/components/footer";
 
-export default function Home() {
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
+import { SignupForm } from "@/components/signup-form";
+
+export default function Signup() {
   return (
     <>
       <Navbar />
-      <Hero />
+      <SignupForm />
       <Footer />
     </>
   );

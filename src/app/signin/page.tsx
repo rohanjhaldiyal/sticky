@@ -1,12 +1,12 @@
 import { Navbar } from "@/components/navbar";
-import  Hero from "@/components/hero";
 import { Footer } from "@/components/footer";
+import { LoginForm } from "@/components/signin-form";
 
-export default function Home() {
+export default function Signup() {
   return (
     <>
       <Navbar />
-      <Hero />
+      <LoginForm />
       <Footer />
     </>
   );
