@@ -21,27 +21,9 @@ export function Navbar() {
           <nav className="hidden md:flex gap-4">
             <Link
               className="font-medium flex items-center text-sm transition-colors hover:underline"
-              href="#"
+              href="/dashboard"
             >
               Home
-            </Link>
-            <Link
-              className="font-medium flex items-center text-sm transition-colors hover:underline"
-              href="#"
-            >
-              About
-            </Link>
-            <Link
-              className="font-medium flex items-center text-sm transition-colors hover:underline"
-              href="#"
-            >
-              Services
-            </Link>
-            <Link
-              className="font-medium flex items-center text-sm transition-colors hover:underline"
-              href="#"
-            >
-              Contact
             </Link>
           </nav>
           <div className="flex items-center gap-4">
