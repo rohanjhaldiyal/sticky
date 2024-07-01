@@ -44,14 +44,10 @@ export function Navbar() {
             </Link>
           </nav>
           <div className="flex items-center gap-4">
-            <Link href="/signup">
-              <Button size="sm">Sign up</Button>
-            </Link>
-            <Link href="/signin">
-              <Button size="sm" variant="outline">
-                Sign in
-              </Button>
-            </Link>
+            <Button size="sm">Sign up</Button>
+            <Button size="sm" variant="outline">
+              Sign in
+            </Button>
             <ModeToggle />
           </div>
         </div>

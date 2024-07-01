@@ -17,9 +17,7 @@ export default function Hero() {
           productivity!
         </h2>
         <div className="flex flex-row gap-2 items-center justify-center">
-          <Link href="/signup">
             <Button>Get Started</Button>
-          </Link>
           <Link href="https://github.com/rohanjhaldiyal/sticky" target="_blank">
             <Button variant="outline">
               <GitHubLogoIcon className="mr-2 h-4 w-4" /> Github
