@@ -7,6 +7,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { PaperPlaneIcon } from "@radix-ui/react-icons";
 import { ModeToggle } from "./mode-toggle";
+import { SignedIn, SignInButton, SignedOut, UserButton } from "@clerk/nextjs";
 
 export function Navbar() {
   return (
@@ -44,10 +45,12 @@ export function Navbar() {
             </Link>
           </nav>
           <div className="flex items-center gap-4">
-            <Button size="sm">Sign up</Button>
-            <Button size="sm" variant="outline">
-              Sign in
-            </Button>
+            <SignedOut>
+              <SignInButton />
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
             <ModeToggle />
           </div>
         </div>
