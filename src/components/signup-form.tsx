@@ -1,8 +1,6 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { createClient } from "@/utils/supabase/component";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -15,27 +13,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 export function SignupForm() {
-  const supabase = createClient();
-  const router = useRouter();
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  async function signUp() {
-    const { data, error } = await supabase.auth.signUp({ email, password });
-    if (error) {
-      console.error(error);
-    }
-    console.log(data);
-    router.push("/");
-  }
-
-  async function signInWithGithub() {
-    const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: "github",
-    });
-  }
-
   return (
     <div className="h-[50rem] w-full dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex items-center justify-center">
       {/* Radial gradient for the container to give a faded look */}
@@ -68,14 +47,10 @@ export function SignupForm() {
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
-              <Button type="submit" className="w-full" onClick={signUp}>
+              <Button type="submit" className="w-full">
                 Create an account
               </Button>
-              <Button
-                variant="outline"
-                className="w-full"
-                onClick={signInWithGithub}
-              >
+              <Button variant="outline" className="w-full">
                 Sign up with GitHub
               </Button>
             </div>
