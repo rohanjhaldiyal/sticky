@@ -10,13 +10,14 @@ import {
 } from "@/components/ui/card";
 import CreateNoteDialog from "./create-note-dialog";
 import DeleteButton from "./delete-button";
+import { note } from "@/app/types/notes";
 
 const Dashboard = async () => {
   const notes = await prisma.notes.findMany();
   return (
     <div className="flex flex-row flex-wrap gap-4 min-h-[100vh] items-center justify-center">
       <CreateNoteDialog />
-      {notes.map((note) => {
+      {notes.map((note: note) => {
         return (
           <div
             key={note.id}
