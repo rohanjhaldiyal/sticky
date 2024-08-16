@@ -9,6 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import CreateNoteDialog from "./create-note-dialog";
+import DeleteButton from "./delete-button";
 
 const Dashboard = async () => {
   const notes = await prisma.notes.findMany();
@@ -29,9 +30,12 @@ const Dashboard = async () => {
                 <CardDescription>{note.content}</CardDescription>
               </CardContent>
               <CardFooter>
-                <span className="text-sm text-gray-500">
-                  {note.createdAt.toLocaleDateString()}
-                </span>
+                <div className="flex flex-col gap-2">
+                  <span className="text-sm text-gray-500">
+                    {note.createdAt.toLocaleDateString()}
+                  </span>
+                  <DeleteButton id={note.id} />
+                </div>
               </CardFooter>
             </Card>
           </div>

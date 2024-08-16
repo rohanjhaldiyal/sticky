@@ -19,12 +19,12 @@ export function Navbar() {
             <span className="font-bold">Sticky</span>
           </Link>
           <nav className="hidden md:flex gap-4">
-            <Link
+            {/* <Link
               className="font-medium flex items-center text-sm transition-colors hover:underline"
               href="/dashboard"
             >
               Home
-            </Link>
+            </Link> */}
           </nav>
           <div className="flex items-center gap-4">
             <SignedOut>
