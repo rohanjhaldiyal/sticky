@@ -13,7 +13,7 @@ export async function createNote(data: { title: string; content: string }) {
       data: {
         title: data.title,
         content: data.content,
-        userId: user.userId,
+        userId: user.userId!,
       },
     });
     return { success: true, note };
