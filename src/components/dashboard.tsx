@@ -17,7 +17,7 @@ const Dashboard = async () => {
   const user = auth();
   const notes = await prisma.notes.findMany({
     where: {
-      userId: user.id,
+      userId: user.userId!,
     },
     orderBy: {
       createdAt: "desc",
