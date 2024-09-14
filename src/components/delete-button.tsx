@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { Button } from "./ui/button";
 import { deleteNote } from "@/app/actions/deleteNote";
+import { toast } from "sonner";
 
 const DeleteButton = ({ id }: { id: number }) => {
   const router = useRouter();
@@ -11,6 +12,8 @@ const DeleteButton = ({ id }: { id: number }) => {
     if (result.success) {
       console.log("Note deleted:", id);
       router.refresh(); // Refresh the page to remove the note
+      toast.dismiss(); // Dismiss any existing toasts
+      toast.success("Note deleted successfully!");
     } else {
       console.error("Failed to delete note:", result.error);
     }

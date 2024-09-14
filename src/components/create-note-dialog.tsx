@@ -16,6 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 const CreateNoteDialog = () => {
   const router = useRouter();
@@ -34,6 +35,7 @@ const CreateNoteDialog = () => {
       setTitle(""); // Reset form
       setContent(""); // Reset form
       router.refresh(); // Refresh the page to show the new note
+      toast.success("Note created successfully!");
     } else {
       console.error("Failed to create note:", result.error);
     }
