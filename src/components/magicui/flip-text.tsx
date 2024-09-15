@@ -23,7 +23,7 @@ export default function SlightFlip({
   className,
 }: SlightFlipProps) {
   return (
-    <div className="flex justify-center space-x-2">
+    <div className="flex justify-center flex-wrap space-x-2">
       <AnimatePresence mode="wait">
         {word.split("").map((char, i) => (
           <motion.span
